@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,500&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Форма комментариев</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="comment">
+            <div class="comment__input input">
+                <div id="name-field" class="input__name input-field-body">
+                    <label for="input-name" class="input__name-label label">Имя</label>
+                    <input type="text" id="input-name" data-validation="true" placeholder="Как Вас зовут?" class="input__name-field input-field">
+                    <p id="name-notification" data-validation="false" class="input__notification notification-name"></p>
+                </div>
+                <div id="text-field" class="input__text input-field-body">
+                    <label for="input-text" class="input__text-label label">Комментарий</label>
+                    <textarea id="input-text" placeholder="Пожалуйста, введите Ваш комментарий" id="text" class="input__text-field input-field"></textarea>
+                    <p id="text-notification" data-validation="false" class="input__notification notification-text"></p>
+                </div>
+                <div class="input__date-button">
+                    <div class="input__date">
+                        <label for="input-date" class="input__date-label label">Дата</label>
+                        <input type="date" id="input-date" id="date" class="input__date-field input-field">
+                    </div>
+                    <p id="button-send" data-visible="false" class="input__button">ОТПРАВИТЬ</p>
+                </div>
+            </div>
+            <div class="comment__out out">
+                <div class="out__field">
+                    <div id="comment-field" class="out__container">
+                        <p id="insteaded" class="comment__instead" data-visibility="true">
+                            Комментариев пока нет, будьте первыми<i class="fa fa-smile-o" aria-hidden="true"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: Roboto;
+  color: rgb(51, 103, 65);
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*-------------Общие Теги----------*/
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment {
+  background-color: rgb(132, 199, 139);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+/*-------------Поле ввода комментария INPUT----------*/
+.label {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 15px;
+  margin-bottom: 7px;
+}
+
+.input-field-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 38px;
+}
+
+.input-field {
+  font-size: 16px;
+  min-height: 36px;
+  min-width: 210px;
+  padding: 5px 10px;
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 5px;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(132, 199, 139);
+}
+
+.input {
+  background-color: rgb(225, 242, 204);
+  border-radius: 15px;
+  padding: 20px;
+}
+.input__name-field {
+  min-height: 36px;
+}
+.input__text-field {
+  resize: none;
+  min-height: 325px;
+  text-align: justify;
+}
+.input__date-button {
+  display: flex;
+  align-items: end;
+}
+.input__date {
+  margin-bottom: 4px;
+}
+.input__date-label {
+  display: flex;
+  flex-direction: column;
+}
+.input__button {
+  cursor: default;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(51, 103, 65, 0.4);
+  height: 45px;
+  width: 210px;
+  text-align: center;
+  line-height: 45px;
+  background-color: rgba(199, 239, 192, 0.4);
+  border-radius: 22.5px;
+  margin-left: 18px;
+}
+.input__button[data-visible=true] {
+  cursor: pointer;
+  color: rgb(51, 103, 65);
+  background-color: rgb(199, 239, 192);
+}
+.input__button[data-visible=true]:hover {
+  height: 46px;
+  border-radius: 23px;
+  font-size: 19px;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25);
+}
+.input__button[data-visible=true]:active {
+  height: 44px;
+  font-size: 17px;
+  box-shadow: none;
+}
+
+/*----------Поля изменяемые Валидацией--------*/
+.input__notification[data-validation=false] {
+  position: absolute;
+  max-width: 400px;
+  font-size: 10px;
+  color: red;
+}
+.input__notification[data-validation=true] {
+  display: none;
+}
+.input__name-field[data-validation=false] {
+  border: 1px solid red;
+}
+.input__text-field[data-validation=false] {
+  border: 1px solid red;
+}
+
+.notification-name {
+  top: 65px;
+}
+
+.notification-text {
+  top: 355px;
+}
+
+/*-------------Поле вывода комментария OUT----------*/
+.comment__instead[data-visibility=true] {
+  align-self: center;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.comment__instead[data-visibility=false] {
+  display: none;
+}
+
+.out {
+  margin-left: 20px;
+  background-color: rgb(225, 242, 204);
+  border-radius: 15px;
+  padding: 20px;
+}
+.out__field {
+  padding: 20px;
+  padding-right: 0px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.out__container {
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+/*-------------Стили комментариев----------*/
+.content {
+  background-color: rgb(199, 239, 192);
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.content__name-date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.content__name {
+  font-size: 14px;
+  color: rgb(51, 103, 65);
+}
+.content__date {
+  font-size: 14px;
+  color: rgb(51, 103, 65);
+}
+.content__text {
+  text-align: justify;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.content__buttons {
+  font-size: 20px;
+  min-height: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-heart {
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.fa-heart:hover {
+  color: rgb(255, 0, 0);
+}
+
+.buttons__basket {
+  cursor: pointer;
+}
+.buttons__like {
+  cursor: pointer;
+}
+.buttons__basket:hover {
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+.buttons__like:hover {
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -1,0 +1,229 @@
+@import '_zero';
+
+/*-------------Общие Теги----------*/
+.wrapper{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment {
+    background-color: rgba(132, 199, 139, 1);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+/*-------------Поле ввода комментария INPUT----------*/
+.label {
+    font-size: 12px;
+        font-weight: 300;
+        line-height: 15px;
+        margin-bottom: 7px;
+}
+
+.input-field-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 38px;
+}
+
+.input-field {
+    font-size: 16px;
+    min-height: 36px;
+    min-width: 210px;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 5px;
+}
+
+.input-field:focus {
+    border: 2px solid rgba(132, 199, 139, 1);
+}
+
+.input {
+    background-color: rgba(225, 242, 204, 1);
+    border-radius: 15px;
+    padding: 20px;
+    
+    
+    &__name-field {
+        min-height: 36px;   
+    }
+        
+    &__text-field {
+        resize: none;
+        min-height: 325px;
+        text-align: justify;
+    }
+    &__date-button {
+        display: flex;
+        align-items: end;
+    }
+    &__date {
+        margin-bottom: 4px;
+    }
+    &__date-label {
+        display: flex;
+        flex-direction: column; 
+    }
+    
+    &__button {
+        cursor: default;
+        font-size: 18px;
+        font-weight: 500;
+        color: rgba(51, 103, 65, 0.4);
+        height: 45px;
+        width: 210px;
+        text-align: center;
+        line-height: 45px;
+        background-color: rgba(199, 239, 192, 0.4);
+        border-radius: 22.5px;
+        margin-left: 18px;
+    }
+    &__button[data-visible="true"] {
+        cursor: pointer;
+        color: rgba(51, 103, 65, 1);
+        background-color: rgba(199, 239, 192, 1);
+    }
+    &__button[data-visible="true"]:hover {
+        height: 46px;
+        border-radius: 23px;
+        font-size: 19px;
+        box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25);
+
+    }
+
+    &__button[data-visible="true"]:active {
+        height: 44px;
+        font-size: 17px;
+        box-shadow: none;
+    }
+}
+    /*----------Поля изменяемые Валидацией--------*/
+.input {
+    &__notification[data-validation="false"] {
+        position: absolute;
+        max-width: 400px;
+        font-size: 10px;
+        color: red;
+    }
+
+    &__notification[data-validation="true"] {
+        display: none;
+    }
+
+    &__name-field[data-validation="false"] {
+        border: 1px solid red;
+    }
+    &__text-field[data-validation="false"] {
+        border: 1px solid red;
+    }
+}
+.notification-name{
+    top: 65px
+}
+
+.notification-text{
+    top: 355px
+}
+
+/*-------------Поле вывода комментария OUT----------*/
+.comment__instead[data-visibility="true"] {
+    align-self: center;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.comment__instead[data-visibility="false"] {
+    display: none;
+}
+
+.out {
+    margin-left: 20px;
+    background-color: rgba(225, 242, 204, 1);
+    border-radius: 15px;
+    padding: 20px;
+    
+
+    &__field {
+        padding: 20px;
+        padding-right: 0px;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    }
+    &__container {
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 500px;
+        overflow-y: auto;
+    }   
+}
+
+ /*-------------Стили комментариев----------*/   
+
+.content {
+    background-color: rgba(199, 239, 192, 1);
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    &__name-date {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    &__name {
+        font-size: 14px;
+        color: rgba(51, 103, 65, 1);
+    }
+    &__date {
+        font-size: 14px;
+        color: rgba(51, 103, 65, 1);
+    }
+    &__text {
+        text-align: justify;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    &__buttons {
+        font-size: 20px;
+        min-height: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.fa-heart {
+    color: rgba(255, 0, 0, 0.6);
+}
+.fa-heart:hover {
+    color: rgb(255, 0, 0);
+}
+.buttons {
+    &__basket {
+        cursor: pointer;
+    }
+    &__like {
+        cursor: pointer;
+    }
+    &__basket:hover {
+        color: black;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    &__like:hover {
+        color: red;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
